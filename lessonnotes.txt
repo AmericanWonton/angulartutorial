@@ -18,4 +18,45 @@ Front-end works with backend to display data. YOU DON'T SAVE DATA WITH ANGULAR
 1.3 Setting up Environment
 
 You need node.js; it's a runtime enviornment for executing javascript code outside the browser
-Needed to build angular projects
+Needed to build angular projects,(at least version 6.9),
+I installed it with browser
+
+We'll use node to install 3rd party libraries:
+Angular CLI
+npm install -g @angular/cli
+ng version gives you the version
+
+To create new project, type:
+ng new hello-world
+
+To run that as a server, type:
+ng serve
+
+1.4 Looking at the files
+Inside the project folder, we have stuff...
+
+'node_moduels' contains all the 3rd party apps we depend on. These are put in a bundle and added to our 
+application
+
+'src' is the code for our application
+
+'assets' contain static stuff for our app
+
+'envioronments' contains different settings for our environment. You start out with one for prod and another for development
+
+main.ts is the 'start' of our program
+
+poylfills.ts is used for loading certain features of angulur
+
+test.ts is used for setting up our test enviornment
+
+.editorconfig is for developers
+
+package.json - Used for libraries and other stuff our application is dependent on. Dev dependencies are used just 
+for a dev machine
+
+tsconfig.json is used to configure typescript. Might need to be changed for complex projects
+
+1.5 Messing with Stuff
+Make sure you SAVE after you change a file. We changed the title in app.components.ts
+During the runtime, all the stylesheets are compiled into a bundle
