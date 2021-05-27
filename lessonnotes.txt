@@ -1,0 +1,21 @@
+Tutorial Link: https://www.youtube.com/watch?v=k5E2AVpwsko 
+
+What is angular? A.) A Framework for building client applications in HTML CSS and javascript/typescript
+
+Angular gives our application a clean structure with utility code you can use in other apps 
+
+This makes the app much easier to typescript
+
+You don't need it...but it helps!
+
+1.2 Architecture
+* Front-end - User interacts with it; HTML CSS, Typescript, Angular
+
+*Back-end - Responsible for data
+
+Front-end works with backend to display data. YOU DON'T SAVE DATA WITH ANGULAR 
+
+1.3 Setting up Environment
+
+You need node.js; it's a runtime enviornment for executing javascript code outside the browser
+Needed to build angular projects
