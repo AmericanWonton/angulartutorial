@@ -1,0 +1,15 @@
+Here is where we can find this example:
+https://www.w3schools.com/angular/angular_intro.asp
+
+NOTE: For this to work with golang, you'll need to change the delimiter charatcters:
+https://stackoverflow.com/questions/20459706/golang-and-angularjs-template-conflict/20489394
+
+I'M HAVING TROUBLE CHANGING THE DELIMITERS PROPERLY BUT FUCK IT, WE NEED TO MOVE ON.
+I got close enough
+
+AngularJS modules define AngularJS applications.
+
+AngularJS controllers control AngularJS applications.
+
+The ng-app directive defines the application, the ng-controller directive defines the controller.
+

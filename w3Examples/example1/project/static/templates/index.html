@@ -1,22 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        {{/* Here is our meta charset and title */}}
-        {{template "meta-title"}}
-        {{/* Here is our pixel density markup */}}
-        {{template "pixel-dense"}}
-        {{/* Here is our FavIcon */}}
-        {{template "fav-icon1"}}
-        {{/* Here are our fonts */}}
-        {{template "fonts1"}}
-        {{/* Here are our Media Query and stylesheets */}}
-        {{template "media-queries"}}
-        {{/* Here is our Javascript or additional code needed */}}
-        {{template "javascript"}}
+        <meta charset="UTF-8">
+        <title>AngularJS Example</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="static/css/main.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     </head>
-    <body>
-        {{/* Here is our header */}}
+    <body> 
+        <!-- The 'ng-app' directive defines an Angular JS application. You can define variables with ng-init.
+        The Controller controls sections of the AngularJS applicaiton.-->
+        <p>A number is [[ 5 ]]</p>
+        [[template "testdefine"]]
+        <div ng-app="myApp" ng-controller="myCtrl" data-ng-init="firstName='John'">
+            <!-- ng-model binds the value of HTML controls to the applicaiton data -->
+            <p>Name: <input type="text" ng-model="name"></p>
+            <!-- 'ng-bind' binds application data to that HTML view -->
+            <p ng-bind="name"></p>
+            <!-- Here is the binded variable of our application -->
+            <p>This dude's name from the binding variable is <span data-ng-bind="firstName"></span></p>
+            <p>You can also do expressions, like 5 + 5 = </p>
+            <p>Here's another example with Name: <input type="text" ng-model="name"></p>
+            <p>TheName is: </p>
+        </div>
         
-        {{/* Here is our footer */}}
     </body>
 </html>
