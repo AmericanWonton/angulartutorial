@@ -20,14 +20,24 @@ func init() {
 	//template1.Delims("<left>", "<right>")
 	//template1.Delims(templateDelims[0], templateDelims[1])
 	//template1.Delims("[[", "]]")
-	//template1 = template.Must(template.ParseGlob("./static/templates/*"))
+	template1 = template.Must(template.ParseGlob("./static/templates/*"))
 	//tmpl, err := template.New("index.html").Delims("[[", "]]").ParseFiles("static/templates/index.html", "templates/standTemp.gohtml")
-	tmpl, err := template.New("index.html").Delims("[[", "]]").ParseGlob("./static/templates/*")
-	template1 = tmpl
-	if err != nil {
-		fmt.Println(err)
-		panic(err)
-	}
+	/*
+		indexTmpl := template.New("index.html").Delims("[[", "]]")
+		indexTmpl, thErr := indexTmpl.ParseFiles("./static/templates/index.html")
+		if thErr != nil {
+			panic(thErr)
+		}
+		template1 = indexTmpl
+	*/
+	/*
+		tmpl, err := template.New("index.html").Delims("[[", "]]").ParseGlob("./static/templates/*")
+		template1 = tmpl
+		if err != nil {
+			fmt.Println(err)
+			panic(err)
+		}
+	*/
 }
 
 func index(w http.ResponseWriter, r *http.Request) {

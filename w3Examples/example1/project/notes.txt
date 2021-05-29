@@ -7,6 +7,10 @@ https://stackoverflow.com/questions/20459706/golang-and-angularjs-template-confl
 I'M HAVING TROUBLE CHANGING THE DELIMITERS PROPERLY BUT FUCK IT, WE NEED TO MOVE ON.
 I got close enough
 
+We can just change JS delimiters too: 
+http://blog.rabidgremlin.com/2014/02/27/tech-tip-change-angularjs-template-delimiters/
+https://docs.angularjs.org/api/ng/provider/$interpolateProvider
+
 AngularJS modules define AngularJS applications.
 
 AngularJS controllers control AngularJS applications.

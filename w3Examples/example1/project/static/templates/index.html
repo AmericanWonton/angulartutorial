@@ -6,23 +6,46 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="static/css/main.css">
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+        <script src="static/js/app.js"></script>
     </head>
     <body> 
         <!-- The 'ng-app' directive defines an Angular JS application. You can define variables with ng-init.
         The Controller controls sections of the AngularJS applicaiton.-->
-        <p>A number is [[ 5 ]]</p>
-        [[template "testdefine"]]
-        <div ng-app="myApp" ng-controller="myCtrl" data-ng-init="firstName='John'">
+        <div ng-app="myApp" ng-controller="myCtrl" data-ng-init="firstName='John';myCol='lightblue';person={firstName:'John',lastName:'Doe'};quantity=1;cost=5">
             <!-- ng-model binds the value of HTML controls to the applicaiton data -->
             <p>Name: <input type="text" ng-model="name"></p>
             <!-- 'ng-bind' binds application data to that HTML view -->
             <p ng-bind="name"></p>
             <!-- Here is the binded variable of our application -->
             <p>This dude's name from the binding variable is <span data-ng-bind="firstName"></span></p>
-            <p>You can also do expressions, like 5 + 5 = </p>
+            <p>You can also do expressions, like 5 + 5 = [[ 5 + 5 ]]</p>
             <p>Here's another example with Name: <input type="text" ng-model="name"></p>
-            <p>TheName is: </p>
+            <p>TheName is: [[name]]</p>
+            <!-- Here is a color example -->
+            <input style="background-color:[[myCol]]" ng-model="myCol">
+            <!--Nums example -->
+            <p>Total in dollar: [[quantity * cost]]</p>
+            <p>Or you can use ng-bind: (Total in dollar: <span ng-bind="quantity * cost"></span>)</p>
+            <!-- Object example -->
+            <p>The name is [[person.lastName]]</p>
+            <p>You can do this for a bunch of JS datatype</p>
         </div>
+
+        <script>
+            var myApp = angular.module('myApp', []);
+            //Set a custom delimiter for templates
+            myApp.config(function($interpolateProvider) {
+                $interpolateProvider.startSymbol('[[');
+                $interpolateProvider.endSymbol(']]');
+            });
+
+            //Test controlller
+            myApp.controller('myCtrl', function($scope) {
+                $scope.firstName= "John";
+                $scope.lastName= "Doe";
+                $scope.name = $scope.firstName + " " + $scope.lastName;
+            });
+        </script>
         
     </body>
 </html>
