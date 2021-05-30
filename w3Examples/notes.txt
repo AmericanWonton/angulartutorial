@@ -27,3 +27,10 @@ If a variable has the same name in both the current scope and in the rootScope, 
 In AngularJS, a service is a function, or object, that is available for, and limited to, your AngularJS application.
 The $location service has methods which return information about the location of the current web page:
 
+
+
+Once you have created a service, and connected it to your application, you can use the service in any controller, directive, filter, or even inside other services.
+
+
+
+
