@@ -20,3 +20,10 @@ The ng-app directive defines the application, the ng-controller directive define
 
 For larger files, it's a good idea to store the controller in a seperate file,(namesController.js)
 
+All applications have a $rootScope which is the scope created on the HTML element that contains the ng-app directive.
+The rootScope is available in the entire application.
+If a variable has the same name in both the current scope and in the rootScope, the application uses the one in the current scope.
+
+In AngularJS, a service is a function, or object, that is available for, and limited to, your AngularJS application.
+The $location service has methods which return information about the location of the current web page:
+

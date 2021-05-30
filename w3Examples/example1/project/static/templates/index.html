@@ -7,7 +7,8 @@
         <link rel="stylesheet" type="text/css" href="static/css/main.css">
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
         <script src="static/js/app.js"></script>
-        <script src="static/js/personController.js"></script>
+        <!-- Add the controller to this app -->
+        <script src="static/js/namesController.js"></script>
     </head>
     <body> 
         <!-- The 'ng-app' directive defines an Angular JS application. You can define variables with ng-init.
@@ -63,6 +64,39 @@
             </form>
             <!--Example funciton inside controller -->
             <p>Full name from the full name func: [[fullName()]]</p>
+            <!-- Filters for expresssion -->
+            <p>The uppercase name is [[lastName | uppercase]]</p>
+            <p>The lowercase name is [[lastName | lowercase]]</p>
+            <p>This is price: [[price | currency]]</p>
+            <ul>
+                <li ng-repeat="x in names | orderBy:'country'">
+                    [[ x.name + ', ' + x.country ]]
+                </li>
+            </ul>
+            <!-- Filters matching an expression -->
+            <p>Type the input and we'll show names that match<input type="text" ng-model="test"></p>
+            <ul>
+                <li ng-repeat="x in names | filter : test">
+                    [[ x ]]
+                </li>
+            </ul>
+            <!-- Filters ordering by name with table columns -->
+            <table border="1" width="100%">
+                <tr>
+                    <th ng-click="orderByMe('name')">Name</th>
+                    <th ng-click="orderByMe('country')">Country</th>
+                </tr>
+                <tr ng-repeat="x in countrynames | orderBy:myOrderBy">
+                    <td>[[x.name]]</td>
+                    <td>[[x.country]]</td>
+                </tr>
+            </table>
+            <!-- Making a custom filer,(every other character is formattted to uppercase) -->
+            <ul>
+                <li ng-repeat="x in names">
+                    [[x | myFormat]]
+                </li>
+            </ul>
         </div>
         <!-- Used for the first example -->
         <script>
@@ -87,9 +121,64 @@
                 $scope.fullName = function(){
                     return $scope.firstName + " " + $scope.lastName;
                 }
+                //Used for names examples
+                $scope.names = [
+                    'Jani',
+                    'Carl',
+                    'Margareth',
+                    'Hege',
+                    'Joe',
+                    'Gustav',
+                    'Birgit',
+                    'Mary',
+                    'Kai'
+                ];
+                //Used for country/names example
+                $scope.countrynames = [
+                    {name:'Jani',country:'Norway'},
+                    {name:'Carl',country:'Sweden'},
+                    {name:'Margareth',country:'England'},
+                    {name:'Hege',country:'Norway'},
+                    {name:'Joe',country:'Denmark'},
+                    {name:'Gustav',country:'Sweden'},
+                    {name:'Birgit',country:'Denmark'},
+                    {name:'Mary',country:'England'},
+                    {name:'Kai',country:'Norway'}
+                ];
+                $scope.orderByMe = function(x) {
+                    $scope.myOrderBy = x;
+                }
+                //For currency example
+                $scope.price = 3;
+            });
+
+            //funciton for custom filter
+            myApp.filter('myFormat', function() {
+                return function(x) {
+                    var i, c, txt = "";
+                    for (i = 0; i < x.length; i++) {
+                    c = x[i];
+                    if (i % 2 == 0) {
+                        c = c.toUpperCase();
+                    }
+                    txt += c;
+                    }
+                    return txt;
+                };
             });
         </script>
 
-
+        <!-- Secon app section...dosen't work too well
+        
+            <div ng-app="myPeepApp" ng-controller="namesCtrl">
+                <ul>
+                    <li ng-repeat="x in names">
+                        [[ x.name + ', ' + x.country ]]
+                    </li>
+                </ul>
+            </div>
+         -->
+        
+        
     </body>
 </html>

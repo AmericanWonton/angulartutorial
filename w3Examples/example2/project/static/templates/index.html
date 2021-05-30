@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>AngularJS Example</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="static/css/main.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+        <script src="static/js/app.js"></script>
+        <!-- Add the controller to this app -->
+        <script src="static/js/namesController.js"></script>
+    </head>
+    <body> 
+        
+        <div ng-app="myApp" ng-controller="myCtrl">
+            <p>The url of this page is:</p>
+            <h3>[[myUrl]]</h3>
+            <br>
+            <h1>The welcome message is: [[myWelcome]]</h1>
+        </div>
+
+        <script>
+            
+        </script>
+
+        <p>This example uses the built-in $location service to get the absolute url of the page.</p>
+    </body>
+</html>
