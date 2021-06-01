@@ -95,3 +95,25 @@ it makes a main.js
 
 So really, you can make shitty code in Typescript, but still have it compile to valid code in JS...
 honestly, why use Typescript?
+
+1.10 Module Example
+
+Each file is like a module.
+
+Angular Modules are a little different than typescript Modules
+
+1.11 BUilding blocks of Angular apps
+
+* Components - Data, HTML Template, and logic for a view.
+For example, say you have a component JUST for the header, where Users can click links and stuff.
+Or a component for leaving a review on an item displayed,(which might also be a component)
+
+An app is just a 'root component' that all other components stem from 
+
+As our app grows, we may need to develop more and more Modules
+
+1.12 Making a component
+* NOTE: see these changes in the 'hello-world' section
+1. Create component -
+2. Register it in a module - 
+3. Add an element in an HTML Markup 

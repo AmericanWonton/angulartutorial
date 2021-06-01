@@ -38,4 +38,57 @@ let alertnateWay = (letterMessage as string).endsWith('c)');
 //Arrow functions
 let doLogger = (letterMessage) => console.log(letterMessage);
 
-//Another example
+//Interface we use for below
+/*
+interface Point {
+    x: number,
+    y: number
+    draw: () => void
+}
+*/
+
+/*We use a class instead...for reasons */
+class Point {
+    //This can make the vairalbe private private g: number;
+    //private x: number;
+    //private y: number;
+    /* Used for builing this instance. The question
+    marks make these fields optional. You can add private instaed of writing it above to initialize
+    this class with these variables */
+    constructor(private x?: number, private y?: number){
+        //this.x = x; Don't need these with private/public declarations
+        //this.y = y;
+    }
+    /* Access Modifiers */
+    //Getter
+    get X(){
+        return this.x;
+    }
+    //Setter
+    set X(value) {
+        if (value < 0)
+            throw new Error('value cannot be less than 0.');
+        this.x = value;
+    }
+
+
+
+    //Random function
+    draw(){
+        //Logic for drawing point
+        console.log('X: ' + this.x + ' , Y: ' + this.y);
+    }
+}
+
+//The new is needed to allocate memory
+/* Old way:
+let point = new Point();
+point.x = 1;
+point.y = 2;
+point.draw();
+*/
+/* Cool way */
+let point = new Point(1, 2);
+let x = point.X;
+point.X = 10;
+point.draw();
