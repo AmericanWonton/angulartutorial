@@ -113,7 +113,8 @@ An app is just a 'root component' that all other components stem from
 As our app grows, we may need to develop more and more Modules
 
 1.12 Making a component
-* NOTE: see these changes in the 'hello-world' section
+* NOTE: see these changes in the 'hello-world' section. Remember it's 
+'ng serve' to run it
 1. Create component -
 2. Register it in a module - 
 3. Add an element in an HTML Markup 
