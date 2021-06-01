@@ -60,3 +60,38 @@ tsconfig.json is used to configure typescript. Might need to be changed for comp
 1.5 Messing with Stuff
 Make sure you SAVE after you change a file. We changed the title in app.components.ts
 During the runtime, all the stylesheets are compiled into a bundle
+
+1.6 Difference between Angular
+
+AngularJS in 2010 was the start...very complex.
+In 2016, Angular 2 was made with Typescript
+A lot of developers got made cuz they had to re-write their apps
+Angular 4 is basically Angular 2.4....
+to avoid confusion, it's just Angular
+
+So, the example with w3 examples is AngularJS...the old version that's gunna die soon 
+and the one everyone uses is just called Angular
+
+1.7 Typescript
+
+Typescript is a superset of Javascript...it has additional features of Javascript.
+
+-"Strong Typing", like declaring what type of variable you're making 
+- Has OOP
+- Catch errors at Compile time,(not all)
+- Great tooling
+
+A lot of browsers don't like typescript...so we have to transcribe it to Javascript
+
+1.8 Installing typescript
+npm install -g typescript
+To see if it downloaded: tsc --version
+
+To compile to Javascript:
+-- tsc main.ts
+it makes a main.js
+
+1.9 Working with Typescript
+
+So really, you can make shitty code in Typescript, but still have it compile to valid code in JS...
+honestly, why use Typescript?
