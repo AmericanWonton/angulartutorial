@@ -31,6 +31,18 @@ The $location service has methods which return information about the location of
 
 Once you have created a service, and connected it to your application, you can use the service in any controller, directive, filter, or even inside other services.
 
+The AngularJS Global API is a set of global JavaScript functions for performing common tasks like:
+
+There's some apis functions that CAN be useful...best to stick with what you need tho
 
 
+You can use 'Include' to include Angular JS code. This can be HTML files you include containing 
+MORE AngularJS code.
+If you want to include files from OTHER domains, you'll have to whitelist it in the config of your application
 
+
+For the animation section, make sure you add the 'ngAnimate' in your JavaScriptYou also need the tag
+at the top of the page
+
+If you want to navigate to different pages in your application, but you also want the application to be a SPA (Single Page Application),
+ with no page reloading, you can use the ngRoute module.

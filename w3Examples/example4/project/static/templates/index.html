@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>AngularJS Example</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="static/css/main.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+        <script src="static/js/app.js"></script>
+        <!-- Add the controller to this app -->
+        <script src="static/js/namesController.js"></script>
+    </head>
+    <body> 
+        
+        <div ng-app="myApp" ng-controller="myCtrl" ng-init="mySwitch=true;hour=13">
+            <!-- Example disable buttons -->
+            <p>
+                <button ng-disabled="mySwitch">Click Me!</button>
+            </p>
+            <p>
+                <input type="checkbox" ng-model="mySwitch"/>Button
+            </p>
+            <p>
+                [[ mySwitch ]]
+            </p>
+            <!-- Example show/hide stuff -->
+            <p ng-show="true">I am visible.</p>
+            <p ng-show="false">I am not visible.</p>
+            <!-- Another hide example -->
+            <p ng-show="hour > 12">I am visible.</p>
+            <!-- On Event examples -->
+            <h1 ng-mousemove="count = count + 1">Mouse over me!</h1>
+            <h2>[[ count ]]</h2>
+            <button ng-click="clickcount = clickcount + 1">Click me!</button>
+            <p>[[ clickcount ]]</p>
+            <!-- Funciton event example -->
+            <button ng-click="myFunction()">Click me!</button>
+            <p>[[ funcount ]]</p>
+            <!-- On click drop down example -->
+            <button ng-click="showFunc()">Click Me!</button>
+            <div ng-show="showMe">
+                <h1>Menu:</h1>
+                <div>Pizza</div>
+                <div>Pasta</div>
+                <div>Pesce</div>
+            </div>
+            <!-- Pass event object example -->
+            <h1 ng-mousemove="locationFunc($event)">Mouse Over Me!</h1>
+            <p>Coordinates: [[x + ', ' + y]]</p>
+            <!-- Forms example -->
+            <form>
+                <p>First Name: <input type="text" ng-model="firstname"></p>
+                <p>Check to show a header: <input type="checkbox" ng-model="myVar"></p>
+                <p>Pick a topic:
+                    <input type="radio" ng-model="myVar" value="dogs">Dogs
+                    <input type="radio" ng-model="myVar" value="tuts">Tutorials
+                    <input type="radio" ng-model="myVar" value="cars">Cars
+                </p>
+                <p>
+                    Select a topic:
+                    <select ng-model="myVar2">
+                        <option value="">
+                        <option value="dogs">Dogs
+                        <option value="tuts">Tutorials
+                        <option value="cars">Cars
+                    </select>
+                </p>
+            </form>
+            <h1>You entered: [[firstname]]</h1>
+            <h1 ng-show="myVar">My Header</h1>
+            <div ng-switch="myVar">
+                <div ng-switch-when="dogs">
+                    <h1>Dogs</h1>
+                    <p>Welcome to a world of dogs.</p>
+                </div>
+                <div ng-switch-when="tuts">
+                    <h1>Tutorials</h1>
+                    <p>Learn from examples.</p>
+                </div>
+                <div ng-switch-when="cars">
+                    <h1>Cars</h1>
+                    <p>Read about cars.</p>
+                </div>
+            </div>
+            <div ng-switch="myVar2">
+                <div ng-switch-when="dogs">
+                    <h1>Dogs</h1>
+                    <p>Welcome to a world of dogs.</p>
+                </div>
+                <div ng-switch-when="tuts">
+                    <h1>Tutorials</h1>
+                    <p>Learn from examples.</p>
+                </div>
+                <div ng-switch-when="cars">
+                    <h1>Cars</h1>
+                    <p>Read about cars.</p>
+                </div>
+            </div>
+            <!-- Big forms example 2 -->
+            <form novalidate>
+                First Name:<br>
+                <input type="text" ng-model="user.firstName"><br>
+                Last Name:<br>
+                <input type="text" ng-model="user.lastName">
+                <br><br>
+                <button ng-click="reset()">RESET</button>
+            </form>
+            <p>form = [[user]]</p>
+            <p>master = [[master]]</p>
+        </div>
+
+        <script>
+            
+        </script>
+    </body>
+</html>
