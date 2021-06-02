@@ -119,3 +119,22 @@ As our app grows, we may need to develop more and more Modules
 we can extend HTML library.
 2. Register it in a module - Added the module in courses.component.ts and app.module.ts
 3. Add an element in an HTML Markup - Assigned that module to an h2 tag
+
+For other notes, check out the files under the 'app' folder
+
+1.13 Generating Components using Angular CLI 
+
+Now that's the OLD TEDIOUS WAY of doing it. You can be faster using Angular CLI
+
+For instance, if you remove something from one of the files on accident, you break the app
+
+Syntax:
+ng g c course
+g= genearate, c=component then the name of the component
+
+This creates the neccessary files,(and a new folder under app), to work on this module
+
+1.14 Directives 
+
+on courses.components.ts, under the component section, we use ` because it can make the lines 
+more readable by allowing it to go on multiple lines

@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CourseComponent } from './course/course.component';
 
 /* This converts the plain typescript class to a module for Angular.
 In 'declarations, we add all of the components that are part of this module.
@@ -11,7 +12,8 @@ For VS Code, it should add the import statement for CoursesComponent at the top*
 @NgModule({
   declarations: [
     AppComponent,
-    CoursesComponent
+    CoursesComponent,
+    CourseComponent
   ],
   imports: [
     BrowserModule,
