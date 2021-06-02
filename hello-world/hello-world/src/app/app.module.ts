@@ -1,3 +1,4 @@
+import { CoursesService } from './courses.service';
 import { CoursesComponent } from './courses.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -9,6 +10,8 @@ import { CourseComponent } from './course/course.component';
 /* This converts the plain typescript class to a module for Angular.
 In 'declarations, we add all of the components that are part of this module.
 For VS Code, it should add the import statement for CoursesComponent at the top*/
+/* FOR DEPENDENCY INJECTION: In the 'Providers' section, you need to insert all the dependencies that
+components in this module are depenedent upon. */
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +22,9 @@ For VS Code, it should add the import statement for CoursesComponent at the top*
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    CoursesService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

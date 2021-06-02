@@ -138,3 +138,29 @@ This creates the neccessary files,(and a new folder under app), to work on this 
 
 on courses.components.ts, under the component section, we use ` because it can make the lines 
 more readable by allowing it to go on multiple lines
+
+Directives are used to manipulate the DOM.
+
+Need to prefix anything modifying the DOM with an *, 
+
+
+1.15 Services
+
+You'd get stuff from the servers and add it in.
+
+Want to declare an HTTP service on it's own...otherwise you need to set it up in ALL components.
+
+You want to declare an HTTP service somwhere and import that in other classes
+
+Added a file under app, (courses.service.ts). Make sure you keep the naming convention like that
+
+1.16 Dependendcy Injection
+
+Look at the app.module.ts and courses compenet files
+
+* Singleton pattern - A single object exists in memory, and that gets passed to all our componenets, based 
+on what's put in the Provider field
+
+1.17 Creating services using CLI 
+ng g s email
+g = genearte s = service then add the name
